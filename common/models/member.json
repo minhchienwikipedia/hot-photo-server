@@ -1,6 +1,7 @@
 {
   "name": "member",
-  "base": "PersistedModel",
+  "plural": "members",
+  "base": "User",
   "idInjection": false,
   "options": {
     "validateUpsert": true
@@ -34,7 +35,7 @@
       "type": "hasMany",
       "model": "accessToken",
       "polymorphic": {
-        "foreignKey": "memberId",
+        "foreignKey": "userId",
         "discriminator": "principalType"
       },
       "options": {

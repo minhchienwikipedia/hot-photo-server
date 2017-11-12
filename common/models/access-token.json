@@ -9,10 +9,14 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "member": {
+    "user": {
       "type": "belongsTo",
-      "model": "member",
-      "foreignKey": ""
+      "idName": "id",
+      "polymorphic": {
+        "idType": "string",
+        "foreignKey": "userId",
+        "discriminator": "principalType"
+      }
     }
   },
   "acls": [],
