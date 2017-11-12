@@ -1,0 +1,60 @@
+{
+  "name": "Post",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "postId": {
+      "type": "string",
+      "id": true,
+      "generated": true
+    },
+    "location": {
+      "type": "string",
+      "required": "true"
+    },
+    "date": {
+      "type": "string",
+      "required": "true"
+    },
+    "createAt": {
+      "type": "string",
+      "required": "true"
+    },
+    "updateAt": {
+      "type": "string"
+    },
+    "rate_owner": {
+      "type": "string"
+    },
+    "rate_partner": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "payment_type": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "owner": {
+      "type": "belongsTo",
+      "model": "member",
+      "foreignKey": ""
+    },
+    "partner": {
+      "type": "belongsTo",
+      "model": "member",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

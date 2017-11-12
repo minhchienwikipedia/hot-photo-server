@@ -1,0 +1,60 @@
+{
+  "name": "member",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "memberId": {
+      "type": "string",
+      "id": true,
+      "generated": true
+    },
+    "memberType": {
+      "type": "string",
+      "required": "true"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string",
+      "required": "true"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "post": {
+      "type": "hasMany",
+      "model": "post",
+      "foreignKey": "memberId"
+    },
+    "accessTokens": {
+      "type": "hasMany",
+      "model": "accessToken",
+      "polymorphic": {
+        "foreignKey": "memberId",
+        "discriminator": "principalType"
+      },
+      "options": {
+        "disableInclude": true
+      }
+    },
+    "roles": {
+      "type": "hasMany",
+      "model": "Role",
+      "foreignKey": "principalId",
+      "through": "RoleMapping"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

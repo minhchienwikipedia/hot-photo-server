@@ -13,26 +13,35 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "db"
-  },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "hotPhoto",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "hotPhoto",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "hotPhoto",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "hotPhoto",
     "public": false
+  },
+  "member": {
+    "dataSource": "hotPhoto",
+    "public": true
+  },
+  "accessToken": {
+    "dataSource": "hotPhoto",
+    "public": false
+  },
+  "Post": {
+    "dataSource": "hotPhoto",
+    "public": true
   }
 }

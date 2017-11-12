@@ -2,5 +2,16 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "hotPhoto": {
+    "host": "ds159235.mlab.com",
+    "port": "59235",
+    "url":
+      "mongodb://minhchienwikipedia:123456789@ds159235.mlab.com:59235/hotphoto",
+    "database": "hotphoto",
+    "password": "123456789",
+    "name": "hotPhoto",
+    "user": "minhchienwikipedia",
+    "connector": "mongodb"
   }
 }
